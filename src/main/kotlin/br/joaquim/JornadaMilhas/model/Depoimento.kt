@@ -17,10 +17,9 @@ data class Depoimento(
 ) {
     fun atualiza(input: DepoimentoDto) {
         when {
-            input.foto != "" || input.foto != null -> this.foto = input.foto
-            input.depoimento != "" || input.depoimento != null ->
-                this.depoimento = input.depoimento
-            input.nome != "" || input.nome != null -> this.nome = input.nome
+            input.foto != "" && input.foto != null -> foto = input.foto
+            input.depoimento != "" && input.depoimento != null -> depoimento = input.depoimento
+            input.nome != "" && input.nome != null -> nome = input.nome
         }
     }
 
