@@ -1,15 +1,20 @@
 package br.joaquim.JornadaMilhas.service
 
-import br.joaquim.JornadaMilhas.model.Depoimento
+import br.joaquim.JornadaMilhas.dto.DepoimentoDto
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 
 interface DepoimentoService {
-    fun buscaTodos(): List<Depoimento>
+    fun buscaTodos(pageable: Pageable): Page<DepoimentoDto>
 
-    fun buscaUmPorId(id: Long): Depoimento
+    fun buscaUmPorId(id: Long): DepoimentoDto
 
-    fun adicionaDepoimento(input: Depoimento): Depoimento
+    fun adicionaDepoimento(input: DepoimentoDto): DepoimentoDto
 
-    fun editaDepoimento(id: Long, input: Depoimento): Depoimento
+    fun editaDepoimento(id: Long, input: DepoimentoDto): DepoimentoDto
 
-    fun removeDepoimento(id: Long)
+    fun removeDepoimentoPorId(id: Long)
+
+    fun removeDepoimento(input: DepoimentoDto)
+
 }
